@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <meta name="persons" content="width=device-width, initial-scale=1"/>
+    <title>Icchoir/Persons</title>
+</head>
+<body>
+    <h2>Membres</h2>
+    <div class="container">
+        <table class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Poste</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "person : ${persons}">
+                    <td th:text = "${person.firstname}"></td>
+                    <td th:text = "${person.name}"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
