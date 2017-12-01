@@ -7,10 +7,9 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PersonService {
 
-  private baseUrl = 'http://localhost:8080/';
+  private baseUrl = 'http://localhost:8080';
 
-  constructor(private http: Http) {
-  }
+  constructor(private http: Http) {}
 
   get(id: number): Observable<Person> {
     const person$ = this.http
@@ -20,10 +19,7 @@ export class PersonService {
   }
 
   getAll(): Observable<Person[]> {
-    const person$ = this.http
-      .get(`${this.baseUrl}/persons`, {headers: this.getHeaders()})
-      .map(mapPersons);
-    return person$;
+    return this.http.get(`${this.baseUrl}/persons`,{}).map((response: Response) => response.json());
   }
 
   private getHeaders() {

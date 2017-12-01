@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import {PersonService} from "./person.service";
+import {PersonService} from "./person/person.service";
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {RouterModule, Routes} from "@angular/router";
-import {PersonComponent} from "./person.component";
+import {PersonComponent} from "./person/person.component";
 
 const appRoutes: Routes = [
 // map '/persons' to the people list component
@@ -23,10 +23,10 @@ const appRoutes: Routes = [
     PersonComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule,
-    RouterModule.forRoot(appRoutes)
+    HttpModule
   ],
   providers: [PersonService],
   bootstrap: [AppComponent]
