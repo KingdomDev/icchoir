@@ -1,44 +1,21 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <custom-menu></custom-menu>
 
     <!-- Page Content -->
     <div class="container">
 
       <!-- Heading Row -->
       <div class="row my-4">
-        <div class="col-lg-8">
-          <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
-        </div>
+        <icchoir-carousel></icchoir-carousel>
+
         <!-- /.col-lg-8 -->
         <div class="col-lg-4">
           <h1>Business Name or Tagline</h1>
-          <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+          <p>This is a template that is great for small businesses.
+            It doesn't have too much fancy flare to it,
+            but it makes a great use of the standard Bootstrap core components.
+            Feel free to use this template for any project you want!</p>
           <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
         </div>
         <!-- /.col-md-4 -->
@@ -108,14 +85,17 @@
 </template>
 
 <script>
-export default {
-  name: 'Home',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  import CustomMenu from './Menu.vue'
+  import IcchoirCarousel from './Carousel.vue'
+
+  export default {
+    name: 'Home',
+
+    components: {
+      CustomMenu,
+      IcchoirCarousel
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
