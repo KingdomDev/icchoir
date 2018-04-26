@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">ICChoir LYON</a>
+      <router-link class="navbar-brand" to="/">ICChoir LYON</router-link>
       <button class="navbar-toggler"
               type="button"
               data-toggle="collapse"
@@ -15,24 +15,24 @@
            id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Accueil
+            <router-link class="nav-link" to="/">Accueil
               <span class="sr-only">(current)</span>
-            </a>
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Membres</a>
+            <router-link class="nav-link" to="members">Membres</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Calendrier</a>
+            <router-link class="nav-link" to="#">Calendrier</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Médias</a>
+            <router-link class="nav-link" to="#">Médias</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Documents</a>
+            <router-link class="nav-link" to="#">Documents</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <router-link class="nav-link" to="#">Contact</router-link>
           </li>
         </ul>
       </div>

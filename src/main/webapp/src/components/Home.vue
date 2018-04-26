@@ -6,7 +6,7 @@
     <div class="container">
 
       <!-- Heading Row -->
-      <div class="row my-4">
+      <div class="row my-4" style="height: 100vh">
         <icchoir-carousel></icchoir-carousel>
 
         <!-- /.col-lg-8 -->
@@ -20,16 +20,14 @@
         </div>
         <!-- /.col-md-4 -->
       </div>
-      <!-- /.row -->
 
-      <!-- Call to Action Well -->
+      <!--
       <div class="card text-white bg-secondary my-4 text-center">
         <div class="card-body">
           <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
         </div>
       </div>
 
-      <!-- Content Row -->
       <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card h-100">
@@ -42,7 +40,7 @@
             </div>
           </div>
         </div>
-        <!-- /.col-md-4 -->
+
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
@@ -54,7 +52,7 @@
             </div>
           </div>
         </div>
-        <!-- /.col-md-4 -->
+
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
@@ -66,33 +64,28 @@
             </div>
           </div>
         </div>
-        <!-- /.col-md-4 -->
 
       </div>
-      <!-- /.row -->
+      -->
 
     </div>
-    <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+    <custom-footer></custom-footer>
   </div>
 </template>
 
 <script>
   import CustomMenu from './Menu.vue'
   import IcchoirCarousel from './Carousel.vue'
+  import CustomFooter from './Footer.vue'
 
   export default {
     name: 'Home',
 
     components: {
       CustomMenu,
+      CustomFooter,
       IcchoirCarousel
     }
   }
