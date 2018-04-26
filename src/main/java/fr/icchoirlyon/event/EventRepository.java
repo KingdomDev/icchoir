@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface EventRepository extends CrudRepository<Event, Long>{
-    List<Event> findall();
+    List<Event> findAll();
 }

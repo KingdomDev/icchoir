@@ -1,4 +1,4 @@
-package fr.icchoirlyon.modele;
+package fr.icchoirlyon.person;
 
 import javax.persistence.*;
 import java.io.Serializable;

@@ -3,7 +3,7 @@
     <custom-menu></custom-menu>
     <div class="container" id="calendar">
       <vue-event-calendar
-        :events="demoEvents"
+        :events="choirEvents"
       ></vue-event-calendar><br>
     </div>
     <custom-footer></custom-footer>
@@ -14,26 +14,30 @@
   import CustomMenu from './Menu.vue'
   import CustomFooter from './Footer.vue'
 
+  import axios from 'axios'
+
   export default {
     name: 'Members',
 
     data () {
       return {
-        demoEvents: [{
-          date: '2016/11/12', // Required
-          title: 'Foo' // Required
-        }, {
-          date: '2016/12/15',
-          title: 'Bar',
-          desc: 'description',
-          customClass: 'disabled highlight' // Custom classes to an calendar cell
-        }]
+        choirEvents: []
       }
     },
 
     components: {
       CustomMenu,
       CustomFooter
+    },
+
+    created() {
+      axios.get(`http://localhost:8080/events`).
+      then(response => {
+        this.choirEvents = response.data;
+        console.log(this.choirEvents);
+      }).catch (e => {
+        this.errors.push(e);
+      });
     }
   }
 </script>

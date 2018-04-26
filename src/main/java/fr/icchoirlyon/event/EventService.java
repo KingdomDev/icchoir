@@ -1,16 +1,16 @@
 package fr.icchoirlyon.event;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @Service
 public class EventService {
-    @Autowired
+    @Inject
     EventRepository eventRepository;
 
     public List<Event> listAllEvents(){
-        return eventRepository.findall();
+        return eventRepository.findAll();
     }
 }

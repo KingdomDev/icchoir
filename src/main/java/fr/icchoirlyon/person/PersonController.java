@@ -1,7 +1,6 @@
 package fr.icchoirlyon.person;
 
 import com.codahale.metrics.annotation.Timed;
-import fr.icchoirlyon.modele.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

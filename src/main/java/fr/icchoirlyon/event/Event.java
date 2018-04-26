@@ -5,25 +5,25 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "person")
+@Table(name = "event")
 public class Event implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "startDate", nullable = false)
+    @Column(name = "start_date", nullable = false)
     private Date startDate;
 
-    @Column(name = "endDate", nullable = false)
+    @Column(name = "end_date")
     private Date endDate;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
 
     @Column(name = "description")
-    private String description;
+    private String desc;
 
-    @Column(name = "creationDdate")
+    @Column(name = "creation_date", nullable = false)
     private Date creationDate;
 
     public Long getId() {
@@ -43,11 +43,11 @@ public class Event implements Serializable{
     }
 
     public String getDescription() {
-        return description;
+        return desc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String desc) {
+        this.desc = desc;
     }
 
     public Date getCreationDate() {
@@ -85,7 +85,7 @@ public class Event implements Serializable{
         if (startDate != null ? !startDate.equals(event.startDate) : event.startDate != null) return false;
         if (endDate != null ? !endDate.equals(event.endDate) : event.endDate != null) return false;
         if (title != null ? !title.equals(event.title) : event.title != null) return false;
-        if (description != null ? !description.equals(event.description) : event.description != null) return false;
+        if (desc != null ? !desc.equals(event.desc) : event.desc != null) return false;
         return creationDate != null ? creationDate.equals(event.creationDate) : event.creationDate == null;
     }
 
@@ -95,7 +95,7 @@ public class Event implements Serializable{
         result = 31 * result + (startDate != null ? startDate.hashCode() : 0);
         result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (desc != null ? desc.hashCode() : 0);
         result = 31 * result + (creationDate != null ? creationDate.hashCode() : 0);
         return result;
     }
@@ -107,7 +107,7 @@ public class Event implements Serializable{
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
                 ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
+                ", desc='" + desc + '\'' +
                 ", creationDate=" + creationDate +
                 '}';
     }
