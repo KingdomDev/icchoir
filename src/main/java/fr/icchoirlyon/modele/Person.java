@@ -13,10 +13,10 @@ public class Person implements Serializable {
     private Long id;
 
     @Column(name = "firstname", nullable = false)
-    private String firstname;
+    private String firstName;
 
     @Column(name = "name", nullable = false)
-    private String name;
+    private String lastName;
 
     @Column(name = "birthdate")
     private Date birthdate;
@@ -31,20 +31,20 @@ public class Person implements Serializable {
         return id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFisrtName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Date getbirthdate() {
@@ -82,9 +82,9 @@ public class Person implements Serializable {
 
         if (id != null ? !id.equals(person.id) : person.id != null)
             return false;
-        if (firstname != null ? !firstname.equals(person.firstname) : person.firstname != null)
+        if (firstName != null ? !firstName.equals(person.firstName) : person.firstName != null)
             return false;
-        if (name != null ? !name.equals(person.name) : person.name != null)
+        if (lastName != null ? !lastName.equals(person.lastName) : person.lastName != null)
             return false;
         if (birthdate != null ? !birthdate.equals(person.birthdate) : person.birthdate != null)
             return false;
@@ -98,8 +98,8 @@ public class Person implements Serializable {
     @Override
     public int hashCode() {
         int result = id != null ? id.hashCode() : 0;
-        result = 7 * result + (firstname != null ? firstname.hashCode() : 0);
-        result = 7 * result + (name != null ? name.hashCode() : 0);
+        result = 7 * result + (firstName != null ? firstName.hashCode() : 0);
+        result = 7 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 7 * result + (birthdate != null ? birthdate.hashCode() : 0);
         result = 7 * result + (address != null ? address.hashCode() : 0);
         return result;
@@ -109,8 +109,8 @@ public class Person implements Serializable {
     public String toString() {
         return "-------Person-------{" +
                 "id :  " + id +
-                "\nfirstname :  " + firstname +
-                "\nname :  " + name +
+                "\nfirstName :  " + firstName +
+                "\nlastName :  " + lastName +
                 "\nbirthdate :  " + birthdate +
                 "\naddress :  " + address +
                 "\ngender :  " + gender +

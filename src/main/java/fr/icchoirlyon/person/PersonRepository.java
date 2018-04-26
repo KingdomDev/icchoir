@@ -1,4 +1,4 @@
-package fr.icchoirlyon.dao;
+package fr.icchoirlyon.person;
 
 import fr.icchoirlyon.modele.Person;
 import org.springframework.data.jpa.repository.Query;

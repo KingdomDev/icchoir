@@ -1,4 +1,4 @@
-package fr.icchoirlyon.dto;
+package fr.icchoirlyon.person;
 
 import java.io.Serializable;
 import java.util.Date;
