@@ -1,8 +1,6 @@
 package fr.icchoirlyon.person;
 
-import fr.icchoirlyon.person.PersonRepository;
 import fr.icchoirlyon.modele.Person;
-import fr.icchoirlyon.person.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
