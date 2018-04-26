@@ -3,12 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import 'vue-event-calendar/dist/style.css' //^1.1.10, CSS has been extracted as one file, so you can easily update it.
+import vueEventCalendar from 'vue-event-calendar'
+
 Vue.use(BootstrapVue);
+Vue.use(vueEventCalendar, {locale: 'fr'})
+
 Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 new Vue({

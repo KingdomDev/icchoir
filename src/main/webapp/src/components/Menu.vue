@@ -23,7 +23,7 @@
             <router-link class="nav-link" to="members">Membres</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="#">Calendrier</router-link>
+            <router-link class="nav-link" to="calendar">Calendrier</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="#">Médias</router-link>
