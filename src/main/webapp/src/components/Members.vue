@@ -12,12 +12,12 @@
             <th scope="col">Poste</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+        <tbody v-if="members && members.length">
+          <tr v-for="member of members">
+            <th scope="row">#</th>
+            <td>{{member.firstName}}</td>
+            <td>{{member.lastName}}</td>
+            <td> - </td>
           </tr>
         </tbody>
       </table>
@@ -38,7 +38,7 @@
     data() {
       return {
         members: [],
-        errors: []
+        errors: [],
       }
     },
 
@@ -47,14 +47,14 @@
       CustomFooter,
     },
 
-    async getMembers() {
-      try {
-        const
-          response = await axios.get(`http://localhost:8080/persons`)
-        this.members = response.data
-      } catch (e) {
-        this.errors.push(e)
-      }
+    created() {
+      axios.get(`http://localhost:8080/persons`).
+      then(response => {
+        this.members = response.data;
+        console.log(this.members);
+      }).catch (e => {
+        this.errors.push(e);
+      });
     }
   }
 </script>

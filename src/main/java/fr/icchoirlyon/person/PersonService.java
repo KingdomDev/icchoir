@@ -1,16 +1,18 @@
-package fr.icchoirlyon.service;
+package fr.icchoirlyon.person;
 
-import fr.icchoirlyon.dao.PersonRepository;
+import fr.icchoirlyon.person.PersonRepository;
 import fr.icchoirlyon.modele.Person;
+import fr.icchoirlyon.person.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class PersonServiceImpl implements PersonService {
+@Service
+public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
-    @Override
     public List<Person> listAllPersons() {
         //System.out.println("Before finding all persons");
         return personRepository.findAll();
