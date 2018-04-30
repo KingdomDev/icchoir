@@ -2,6 +2,7 @@
   <div>
     <custom-menu></custom-menu>
     <div class="container" id="calendar">
+      <h2>Calendrier</h2>
       <vue-event-calendar
         :events="choirEvents"
       ></vue-event-calendar><br>

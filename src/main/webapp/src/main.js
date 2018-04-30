@@ -11,8 +11,11 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'vue-event-calendar/dist/style.css' //^1.1.10, CSS has been extracted as one file, so you can easily update it.
 import vueEventCalendar from 'vue-event-calendar'
 
+import AudioVisual from 'vue-audio-visual'
+
 Vue.use(BootstrapVue);
 Vue.use(vueEventCalendar, {locale: 'fr'})
+Vue.use(AudioVisual)
 
 Vue.config.productionTip = false
 

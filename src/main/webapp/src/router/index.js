@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Members from '@/components/Members'
 import Calendar from '@/components/Calendar'
+import Medias from '@/components/Medias'
+import MediasAudios from '@/components/MediasAudios'
+import MediasVideos from '@/components/MediasVideos'
+import MediasDocuments from '@/components/MediasDocuments'
 
 Vue.use(Router)
 
@@ -22,6 +26,26 @@ export default new Router({
       path: '/calendar',
       name: 'Calendar',
       component: Calendar
+    },
+    {
+      path: '/medias',
+      name: 'Medias',
+      component: Medias
+    },
+    {
+      path: '/medias-audios',
+      name: 'MediasAudios',
+      component: MediasAudios
+    },
+    {
+      path: '/medias-videos',
+      name: 'MediasVideos',
+      component: MediasVideos
+    },
+    {
+      path: '/medias-documents',
+      name: 'MediasDocuments',
+      component: MediasDocuments
     }
   ]
 })

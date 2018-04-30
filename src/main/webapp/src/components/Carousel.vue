@@ -16,44 +16,44 @@
       <!-- Text slides with image -->
       <b-carousel-slide caption="First slide">
         <img slot="img" class="d-block img-fluid w-100" width="900" height="450"
-                        src="../assets/caroussel1.jpg" alt="image slot">
+                        src="../assets/images/caroussel1.jpg" alt="image slot">
       </b-carousel-slide>
 
       <!-- Slides with custom text -->
       <b-carousel-slide>
         <img slot="img" class="d-block img-fluid w-100" width="900" height="450"
-             src="../assets/caroussel2.jpg" alt="image slot">
+             src="../assets/images/caroussel2.jpg" alt="image slot">
       </b-carousel-slide>
 
       <!-- Slides with image only -->
       <b-carousel-slide>
         <img slot="img" class="d-block img-fluid w-100" width="900" height="450"
-             src="../assets/caroussel3.jpg" alt="image slot">
+             src="../assets/images/caroussel3.jpg" alt="image slot">
       </b-carousel-slide>
 
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
       <b-carousel-slide>
         <img slot="img" class="d-block img-fluid w-100" width="900" height="450"
-             src="../assets/caroussel4.jpg" alt="image slot">
+             src="../assets/images/caroussel4.jpg" alt="image slot">
       </b-carousel-slide>
 
       <b-carousel-slide>
         <img slot="img" class="d-block img-fluid w-100" width="900" height="450"
-             src="../assets/caroussel5.jpg" alt="image slot">
+             src="../assets/images/caroussel5.jpg" alt="image slot">
       </b-carousel-slide>
 
       <!-- Slides with image only -->
       <b-carousel-slide>
         <img slot="img" class="d-block img-fluid w-100" width="900" height="450"
-             src="../assets/caroussel6.jpg" alt="image slot">
+             src="../assets/images/caroussel6.jpg" alt="image slot">
       </b-carousel-slide>
 
       <!-- Slides with img slot -->
       <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
       <b-carousel-slide>
         <img slot="img" class="d-block img-fluid w-100" width="900" height="450"
-             src="../assets/caroussel7.jpg" alt="image slot">
+             src="../assets/images/caroussel7.jpg" alt="image slot">
       </b-carousel-slide>
 
     </b-carousel>

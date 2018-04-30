@@ -26,10 +26,7 @@
             <router-link class="nav-link" to="calendar">Calendrier</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="#">Médias</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="#">Documents</router-link>
+            <router-link class="nav-link" to="medias">Bibliothèque</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="#">Contact</router-link>

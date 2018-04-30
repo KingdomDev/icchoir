@@ -1,6 +1,9 @@
 package fr.icchoirlyon.config;
 
-import fr.icchoirlyon.service.*;
+import fr.icchoirlyon.instrument.InstrumentService;
+import fr.icchoirlyon.instrument.InstrumentServiceImpl;
+import fr.icchoirlyon.voice.VoiceService;
+import fr.icchoirlyon.voice.VoiceServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
