@@ -16,7 +16,7 @@ public class EventController {
     @CrossOrigin(origins = "http://localhost:9000")
     @GetMapping("/events")
     @Timed
-    List<Event> getEvents() {
+    List<EventDTO> getEvents() {
         return eventService.listAllEvents();
     }
 }

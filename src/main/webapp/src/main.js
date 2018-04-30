@@ -14,7 +14,7 @@ import vueEventCalendar from 'vue-event-calendar'
 import AudioVisual from 'vue-audio-visual'
 
 Vue.use(BootstrapVue);
-Vue.use(vueEventCalendar, {locale: 'fr'})
+Vue.use(vueEventCalendar, {locale: 'fr', color: '#63c1d8'})
 Vue.use(AudioVisual)
 
 Vue.config.productionTip = false
