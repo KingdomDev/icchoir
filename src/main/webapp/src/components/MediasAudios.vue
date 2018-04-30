@@ -4,7 +4,7 @@
     <div class="container" id="medias">
       <h2>Bibliothèque - Audios</h2>
       <custom-menu-media></custom-menu-media>
-      <div class="col-lg-8" v-if="audios && audios.length">
+      <div class="col-lg-8" v-if="audios && audios.length" id="audios">
         <div v-for="audio of audios" :key="audio.id">
             <h5 class="mt-0 mb-1">{{audio.name}}</h5>
             <av-circle
@@ -52,12 +52,18 @@
       axios.get(`http://localhost:8080/medias/audio`).
       then(response => {
         this.audios = response.data;
-        console.log(this.audios)
+        //console.log(this.audios)
       }).catch (e => {
         this.errors.push(e);
       });
     }
   }
+
+  /*$(document).ready(function(){
+    $("#medias").click(function(){
+      $("#audios").hide();
+    });
+  });*/
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
