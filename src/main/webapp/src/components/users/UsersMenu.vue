@@ -6,28 +6,25 @@
     <router-link class="navbar-brand" to="/">ICChoir LYON</router-link>
 
     <b-collapse is-nav id="nav_collapse">
-      <b-navbar-nav>
+      <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <router-link class="nav-link" to="/">Accueil
             <span class="sr-only">(current)</span>
           </router-link>
         </li>
-
         <li class="nav-item">
           <router-link class="nav-link" to="members">Membres</router-link>
         </li>
-
+        <li class="nav-item">
+          <router-link class="nav-link" to="calendar">Calendrier</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="medias">Bibliothèque</router-link>
+        </li>
         <li class="nav-item">
           <router-link class="nav-link" to="#">Contact</router-link>
         </li>
-      </b-navbar-nav>
-
-      <b-navbar-nav class="ml-auto">
-        <li class="nav-item" right>
-          <router-link class="nav-link" to="#">Inscription</router-link>
-        </li>
-
-        <li class="nav-item" right>
+        <li class="nav-item">
           <div>
             <b-button @click="showModal">Connexion</b-button>
             <b-modal id="modalPrevent"
@@ -42,18 +39,18 @@
                               :label-cols="4"
                               label="Nom d'utilisateur"
                               label-for="input_default">
-                    <b-form-input type="text"
-                              v-model="user.username">
-                    </b-form-input>
+                  <b-form-input type="text"
+                                v-model="user.username">
+                  </b-form-input>
                 </b-form-group>
 
                 <b-form-group horizontal
                               :label-cols="4"
                               label="Mot de passe"
                               label-for="input_default">
-                    <b-form-input type="password"
-                              v-model="user.password">
-                    </b-form-input>
+                  <b-form-input type="password"
+                                v-model="user.password">
+                  </b-form-input>
                 </b-form-group>
                 <b-btn class="mt-2" variant="outline-danger" @click="hideModal">Annuler</b-btn>
                 <b-btn class="mt-2" variant="outline-info" @click="handleOk">Valider</b-btn>
@@ -61,7 +58,7 @@
             </b-modal>
           </div>
         </li>
-      </b-navbar-nav>
+      </ul>
     </b-collapse>
   </b-navbar>
 </template>
@@ -70,7 +67,7 @@
   import axios from 'axios'
 
   export default {
-    name: 'custom-menu',
+    name: 'user-custom-menu',
 
     data () {
       return {

@@ -4,6 +4,13 @@
     <div class="container" id="medias">
       <h2>Bibliothèque - Videos</h2>
       <custom-menu-media></custom-menu-media>
+      <div class="col-lg-8" v-if="videos && videos.length" id="videos">
+        <div v-for="video of videos" :key="video.id">
+          <h5 class="mt-0 mb-1">{{video.name}}</h5>
+          <iframe width="400" height="200" src="https://www.youtube.com/embed/watch?v=Imldy_tJGz4">
+          </iframe>
+        </div>
+      </div>
     </div>
     <custom-footer></custom-footer>
   </div>
@@ -21,7 +28,7 @@
 
     data () {
       return {
-        choirEvents: []
+        videos: []
       }
     },
 
@@ -32,10 +39,10 @@
     },
 
     created() {
-      axios.get(`http://localhost:8080/events`).
+      axios.get(`http://localhost:8080/medias/video`).
       then(response => {
-        this.choirEvents = response.data;
-        console.log(this.choirEvents);
+        this.videos = response.data;
+        console.log(this.videos)
       }).catch (e => {
         this.errors.push(e);
       });
