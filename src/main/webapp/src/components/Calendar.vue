@@ -22,7 +22,8 @@
 
     data () {
       return {
-        choirEvents: []
+        choirEvents: [],
+        api: 'http://localhost:8080/api'
       }
     },
 
@@ -32,7 +33,7 @@
     },
 
     created() {
-      axios.get(`http://localhost:8080/events`).
+      axios.get(this.api + `/events`).
       then(response => {
         this.choirEvents = response.data;
         //console.log(this.choirEvents);

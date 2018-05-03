@@ -38,6 +38,7 @@
 
     data () {
       return {
+        api: 'http://localhost:8080/api',
         audios: []
       }
     },
@@ -49,7 +50,7 @@
     },
 
     created() {
-      axios.get(`http://localhost:8080/medias/audio`).
+      axios.get(this.api + `/medias/audio`).
       then(response => {
         this.audios = response.data;
         //console.log(this.audios)

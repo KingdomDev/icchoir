@@ -1,8 +1,16 @@
 package fr.icchoirlyon.voice;
 
-import fr.icchoirlyon.voice.Voice;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
-public interface VoiceService {
-    List<Voice> listAllVoices();
+@Service
+public class VoiceService {
+    @Autowired
+    private VoiceRepository voiceRepository;
+
+    public List<Voice> listAllVoices() {
+        return voiceRepository.findAll();
+    }
 }

@@ -1,8 +1,13 @@
 package fr.icchoirlyon.person;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import fr.icchoirlyon.user.User;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "person")
@@ -27,6 +32,10 @@ public class Person implements Serializable {
     @Column(name = "gender", nullable = false)
     private char gender;
 
+    @OneToMany(mappedBy = "person")
+    @JsonIgnore
+    private List<User> users = new ArrayList<>();
+
     public Long getId() {
         return id;
     }
@@ -47,11 +56,11 @@ public class Person implements Serializable {
         this.lastName = lastName;
     }
 
-    public Date getbirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
-    public void setbirthdate(Date birthdate) {
+    public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 
@@ -69,6 +78,18 @@ public class Person implements Serializable {
 
     public void setGender(char gender) {
         this.gender = gender;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
     }
 
     @Override

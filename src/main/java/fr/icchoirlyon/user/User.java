@@ -1,5 +1,7 @@
 package fr.icchoirlyon.user;
 
+import fr.icchoirlyon.person.Person;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -18,6 +20,9 @@ public class User implements Serializable{
 
     @Column(name = "admin")
     private boolean admin;
+
+    @Column(name = "person_id")
+    private Person person;
 
     public long getId() {
         return id;
@@ -49,5 +54,13 @@ public class User implements Serializable{
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }

@@ -8,20 +8,18 @@ import javax.inject.Inject;
 import java.util.List;
 
 @RestController
-@RequestMapping("/medias")
+@RequestMapping("/api")
 public class MediaController {
     @Inject
     MediaService mediaService;
 
-    @CrossOrigin(origins = "http://localhost:9000")
-    @GetMapping("/")
+    @GetMapping("/medias")
     @Timed
     Page<Media> getAllMedias() {
         return mediaService.getAllMedias();
     }
 
-    @CrossOrigin(origins = "http://localhost:9000")
-    @GetMapping("/{type}")
+    @GetMapping("/medias/{type}")
     @Timed
     List<Media> getAllMediasByType(@PathVariable String type) {
         return mediaService.getAllMediasByType(type);

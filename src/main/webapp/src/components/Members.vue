@@ -37,8 +37,9 @@
 
     data() {
       return {
+        api: 'http://localhost:8080/api',
         members: [],
-        errors: [],
+        errors: []
       }
     },
 
@@ -48,7 +49,7 @@
     },
 
     created() {
-      axios.get(`http://localhost:8080/persons`).
+      axios.get(this.api + `/persons`).
       then(response => {
         this.members = response.data;
         console.log(this.members);

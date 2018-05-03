@@ -14,4 +14,8 @@ public class PersonService {
         //System.out.println("Before finding all persons");
         return personRepository.findAll();
     }
+
+    public Person save(Person person) {
+        return personRepository.save(person);
+    }
 }

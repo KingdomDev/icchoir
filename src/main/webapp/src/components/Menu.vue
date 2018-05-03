@@ -18,14 +18,19 @@
         </li>
 
         <li class="nav-item">
+          <router-link class="nav-link" to="calendar">Calendrier</router-link>
+        </li>
+
+
+        <li class="nav-item">
           <router-link class="nav-link" to="#">Contact</router-link>
         </li>
       </b-navbar-nav>
 
       <b-navbar-nav class="ml-auto">
-        <li class="nav-item" right>
+        <!--li class="nav-item" right>
           <router-link class="nav-link" to="#">Inscription</router-link>
-        </li>
+        </li-->
 
         <li class="nav-item" right>
           <div>

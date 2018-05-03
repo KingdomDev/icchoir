@@ -29,16 +29,6 @@
       CustomMenu,
       CustomFooter,
       CustomMenuMedia
-    },
-
-    created() {
-      axios.get(`http://localhost:8080/events`).
-      then(response => {
-        this.choirEvents = response.data;
-        console.log(this.choirEvents);
-      }).catch (e => {
-        this.errors.push(e);
-      });
     }
   }
 </script>

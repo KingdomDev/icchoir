@@ -28,6 +28,7 @@
 
     data () {
       return {
+        api: 'http://localhost:8080/api',
         videos: []
       }
     },
@@ -39,7 +40,7 @@
     },
 
     created() {
-      axios.get(`http://localhost:8080/medias/video`).
+      axios.get(this.api + `/medias/video`).
       then(response => {
         this.videos = response.data;
         console.log(this.videos)

@@ -1,6 +1,7 @@
 package fr.icchoirlyon.user;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -9,9 +10,9 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, Long>{
     List<User> findAll();
 
-    User findById();
+    User findById(Long id);
 
-    List<User> findByAdmin();
+    List<User> findByAdmin(Boolean admin);
 
-    User findByUsernameAndPassword();
+    User findByUsername(String username);
 }

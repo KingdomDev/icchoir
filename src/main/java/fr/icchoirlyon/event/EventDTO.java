@@ -1,6 +1,8 @@
 package fr.icchoirlyon.event;
 
-public class EventDTO {
+import java.io.Serializable;
+
+public class EventDTO implements Serializable{
     private Long id;
 
     private String date;

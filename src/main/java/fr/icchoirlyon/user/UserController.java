@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.inject.Inject;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api")
 public class UserController {
     @Inject
     private UserService userService;
 
-    @PostMapping("/sign-up")
+    @PostMapping("/users/sign-up")
     public void signUp(@RequestBody User user) {
         userService.saveUser(user);
     }

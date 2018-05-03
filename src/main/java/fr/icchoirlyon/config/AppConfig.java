@@ -1,23 +1,22 @@
 package fr.icchoirlyon.config;
 
-import fr.icchoirlyon.instrument.InstrumentService;
-import fr.icchoirlyon.instrument.InstrumentServiceImpl;
-import fr.icchoirlyon.voice.VoiceService;
-import fr.icchoirlyon.voice.VoiceServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
 @ComponentScan
 public class AppConfig {
     @Bean
-    public VoiceService voiceService() {
-        return new VoiceServiceImpl();
-    }
-
-    @Bean
-    public InstrumentService instrumentService() {
-        return new InstrumentServiceImpl();
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurerAdapter() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**");
+            }
+        };
     }
 }

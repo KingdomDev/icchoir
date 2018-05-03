@@ -7,6 +7,7 @@ import Medias from '@/components/Medias'
 import MediasAudios from '@/components/MediasAudios'
 import MediasVideos from '@/components/MediasVideos'
 import MediasDocuments from '@/components/MediasDocuments'
+import CreateUser from '@/components/users/CreateUser'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/medias-documents',
       name: 'MediasDocuments',
       component: MediasDocuments
+    },
+    {
+      path: '/admin-create-user',
+      name: 'CreateUser',
+      component: CreateUser
     }
   ]
 })
