@@ -14,7 +14,11 @@
         </thead>
         <tbody v-if="members && members.length">
           <tr v-for="member of members">
-            <th scope="row">#</th>
+            <th scope="row">
+              <b-button @click="openDetails(member.id)" size="sm">
+                <icon name="folder-open"></icon>
+              </b-button>
+            </th>
             <td>{{member.firstName}}</td>
             <td>{{member.lastName}}</td>
             <td> - </td>
@@ -29,6 +33,8 @@
 <script>
   import CustomMenu from './Menu.vue'
   import CustomFooter from './Footer.vue'
+
+  import 'vue-awesome/icons/folder-open'
 
   import axios from 'axios'
 
@@ -52,10 +58,16 @@
       axios.get(this.api + `/persons`).
       then(response => {
         this.members = response.data;
-        console.log(this.members);
+        //console.log(this.members);
       }).catch (e => {
         this.errors.push(e);
       });
+    },
+
+    methods: {
+      openDetails(id) {
+        this.$router.push({name: 'MemberDetails', params: {id: id}});
+      }
     }
   }
 </script>

@@ -8,17 +8,17 @@
     <b-collapse is-nav id="nav_collapse">
       <b-navbar-nav>
         <li class="nav-item active">
-          <router-link class="nav-link" to="/">Accueil
+          <router-link class="nav-link" :to="{name: 'Home'}">Accueil
             <span class="sr-only">(current)</span>
           </router-link>
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link" to="members">Membres</router-link>
+          <router-link class="nav-link" :to="{name: 'Members'}">Membres</router-link>
         </li>
 
         <li class="nav-item">
-          <router-link class="nav-link" to="calendar">Calendrier</router-link>
+          <router-link class="nav-link" :to="{name: 'Calendar'}">Calendrier</router-link>
         </li>
 
         <li class="nav-item">

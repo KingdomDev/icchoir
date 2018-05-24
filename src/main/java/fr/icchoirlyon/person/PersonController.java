@@ -17,12 +17,20 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
+    //GET_MAPPINGS -----------------------------------------------------------------------------------------------------
     @GetMapping("/persons")
     @Timed
     public List<Person> getAllPersons() {
-        return personService.listAllPersons();
+        return personService.findAllPersons();
     }
 
+    @GetMapping("/persons/{id}")
+    @Timed
+    public Person getPerson(@PathVariable Long id) {
+        return personService.findPerson(id);
+    }
+
+    //POST_MAPPINGS ----------------------------------------------------------------------------------------------------
     @PostMapping("/persons")
     @Timed
     public ResponseEntity<Person> createPerson(@Valid @RequestBody Person person) throws URISyntaxException {

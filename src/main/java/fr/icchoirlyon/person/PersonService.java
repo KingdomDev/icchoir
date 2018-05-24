@@ -10,12 +10,16 @@ public class PersonService {
     @Autowired
     private PersonRepository personRepository;
 
-    public List<Person> listAllPersons() {
+    public List<Person> findAllPersons() {
         //System.out.println("Before finding all persons");
         return personRepository.findAll();
     }
 
     public Person save(Person person) {
         return personRepository.save(person);
+    }
+
+    public Person findPerson(Long id) {
+        return personRepository.findOne(id);
     }
 }

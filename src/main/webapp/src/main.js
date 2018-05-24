@@ -13,9 +13,13 @@ import vueEventCalendar from 'vue-event-calendar'
 
 import AudioVisual from 'vue-audio-visual'
 
+import Icon from 'vue-awesome/components/Icon'
+
 Vue.use(BootstrapVue);
 Vue.use(vueEventCalendar, {locale: 'fr', color: '#63c1d8'})
 Vue.use(AudioVisual)
+
+Vue.component('icon', Icon)
 
 Vue.config.productionTip = false
 
