@@ -1,7 +1,10 @@
 package fr.icchoirlyon.voice;
 
+import fr.icchoirlyon.voice_to_media.VoiceToMedia;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "voice")
@@ -16,6 +19,9 @@ public class Voice implements Serializable {
 
     @Column(name = "description")
     private String description;
+
+    @OneToMany(mappedBy = "voice", cascade = CascadeType.ALL)
+    private List<VoiceToMedia> voiceToMedia;
 
     public Long getId() {
         return id;
@@ -35,5 +41,9 @@ public class Voice implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<VoiceToMedia> getVoiceToMedia() {
+        return voiceToMedia;
     }
 }

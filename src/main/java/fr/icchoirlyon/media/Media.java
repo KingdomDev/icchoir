@@ -1,7 +1,10 @@
 package fr.icchoirlyon.media;
 
+import fr.icchoirlyon.voice_to_media.VoiceToMedia;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "media")
@@ -24,6 +27,9 @@ public class Media {
 
     @Column(name = "creation_date", nullable = false)
     private Date creationDate;
+
+    @OneToMany(mappedBy = "media", cascade = CascadeType.ALL)
+    List<VoiceToMedia> voiceToMedia;
 
     public long getId() {
         return id;
@@ -63,6 +69,10 @@ public class Media {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public List<VoiceToMedia> getVoiceToMedia() {
+        return voiceToMedia;
     }
 
     @Override

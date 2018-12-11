@@ -10,7 +10,7 @@ public class VoiceService {
     @Autowired
     private VoiceRepository voiceRepository;
 
-    public List<Voice> listAllVoices() {
+    public List<Voice> getAllVoices() {
         return voiceRepository.findAll();
     }
 }

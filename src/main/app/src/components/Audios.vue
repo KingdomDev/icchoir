@@ -1,6 +1,7 @@
 <template>
   <div>
     <custom-menu></custom-menu>
+
     <div class="container" id="medias">
       <h2>Bibliothèque - Audios</h2>
 
@@ -8,8 +9,21 @@
         <custom-menu-media></custom-menu-media>
       </div>
 
-      <div class="col-lg-12" v-if="audios && audios.length" id="audios">
-        <b-card-group columns >
+      <div class="col-lg-12" style="height: 100vh"
+           v-if="audios && audios.length" id="audios">
+        <div class="card-columns">
+          <div v-for="audio of audios" :key="audio.id"
+            class="card">
+            <div class="card-header">
+              {{audio.name}}
+            </div>
+            <div class="card-body">
+              <audio controls="controls" :src="audioDirectory + audio.url">
+              </audio>
+            </div>
+          </div>
+        </div>
+        <!--b-card-group columns >
           <b-card v-for="audio of audios" :key="audio.id"
                   bg-variant="ligth"
                   :header="audio.name"
@@ -18,9 +32,8 @@
               <source :src="audioDirectory + audio.url" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
-          <!--vue-audio file="audioDirectory + audio.url"></vue-audio-->
           </b-card>
-        </b-card-group>
+        </b-card-group-->
       </div>
     </div>
     <custom-footer></custom-footer>
@@ -82,6 +95,6 @@
   }
 
   .audio-card audio {
-    width: 80%;
+    /*width: 80%;*/
   }
 </style>
