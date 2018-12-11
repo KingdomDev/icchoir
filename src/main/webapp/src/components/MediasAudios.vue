@@ -1,9 +1,9 @@
 <template>
   <div>
-    <!--custom-menu></custom-menu-->
+    <custom-menu></custom-menu>
     <div class="container" id="medias">
       <h2>Bibliothèque - Audios</h2>
-      <!--custom-menu-media></custom-menu-media-->
+      <custom-menu-media></custom-menu-media>
       <div class="col-lg-8" v-if="audios && audios.length" id="audios">
         <div v-for="audio of audios" :key="audio.id">
             <h5 class="mt-0 mb-1">{{audio.name}}</h5>
@@ -16,7 +16,7 @@
               audio-src="../assets/audios/IsraelNewBreed-Rez_Power.mp3"
             ></av-circle-->
           <audio controls>
-            <source src="./assets/IsraelNewBreed-Rez_Power.mp3" type="audio/mpeg">
+            <source src="../assets/audios/IsraelNewBreed-Rez_Power.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </div>
@@ -27,9 +27,9 @@
 </template>
 
 <script>
-  //import CustomMenu from './Menu.vue'
-  //import CustomFooter from './Footer.vue'
-  //import CustomMenuMedia from './MenuMedia.vue'
+  import CustomMenu from './Menu.vue'
+  import CustomFooter from './Footer.vue'
+  import CustomMenuMedia from './MenuMedia.vue'
 
   import axios from 'axios'
 
@@ -44,9 +44,9 @@
     },
 
     components: {
-      //CustomMenu,
-      //CustomFooter,
-      //CustomMenuMedia
+      CustomMenu,
+      CustomFooter,
+      CustomMenuMedia
     },
 
     created() {

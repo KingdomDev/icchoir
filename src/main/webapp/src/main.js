@@ -7,18 +7,22 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(BootstrapVue);
 
 import 'vue-event-calendar/dist/style.css' //^1.1.10, CSS has been extracted as one file, so you can easily update it.
 import vueEventCalendar from 'vue-event-calendar'
+Vue.use(vueEventCalendar, {locale: 'fr', color: '#63c1d8'})
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faCoffee)
+Vue.use('font-awesome-icon', FontAwesomeIcon);
 
 import AudioVisual from 'vue-audio-visual'
-
-import Icon from 'vue-awesome/components/Icon'
-
-Vue.use(BootstrapVue);
-Vue.use(vueEventCalendar, {locale: 'fr', color: '#63c1d8'})
 Vue.use(AudioVisual)
 
+import Icon from 'vue-awesome/components/Icon'
 Vue.component('icon', Icon)
 
 Vue.config.productionTip = false

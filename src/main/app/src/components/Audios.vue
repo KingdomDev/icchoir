@@ -3,20 +3,27 @@
     <custom-menu></custom-menu>
     <div class="container" id="medias">
       <h2>Bibliothèque - Audios</h2>
-      <custom-menu-media></custom-menu-media>
+
+      <div>
+        <custom-menu-media></custom-menu-media>
+      </div>
+
       <div class="col-lg-12" v-if="audios && audios.length" id="audios">
-        <b-card v-for="audio of filteredList" :key="audio.id"
-                bg-variant="ligth"
-                :header="audio.name"
-                class="audio-card col-md-4">
-          <audio controls>
-            <source :src="audioDirectory + audio.url" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
-        </b-card>
+        <b-card-group columns >
+          <b-card v-for="audio of audios" :key="audio.id"
+                  bg-variant="ligth"
+                  :header="audio.name"
+                  class="audio-card">
+            <audio controls>
+              <source :src="audioDirectory + audio.url" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          <!--vue-audio file="audioDirectory + audio.url"></vue-audio-->
+          </b-card>
+        </b-card-group>
       </div>
     </div>
-    <!--custom-footer></custom-footer-->
+    <custom-footer></custom-footer>
   </div>
 </template>
 
@@ -32,7 +39,7 @@
 
     data () {
       return {
-        api: 'http://localhost:8080/api',
+        api: 'http://localhost:8080/api/medias/audio',
         audios: [],
         audioDirectory: '/static/audio/'
       }
@@ -45,7 +52,7 @@
     },
 
     created() {
-      axios.get(this.api + `/medias/audio`).
+      axios.get(this.api).
       then(response => {
         this.audios = response.data;
         //console.log(this.audios)
@@ -54,20 +61,14 @@
       });
     },
 
-    computed: {
+    /*computed: {
       filteredList() {
         return this.audios.filter(audio => {
           return audio.name.toLowerCase().includes(CustomMenuMedia.data().search.toLowerCase())
         })
       }
-    }
+    }*/
   }
-
-  /*$(document).ready(function(){
-    $("#medias").click(function(){
-      $("#audios").hide();
-    });
-  });*/
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -77,7 +78,10 @@
   }
 
   .audio-card {
-    float: left;
-    width: 33.33%;
+    height: 15vh;
+  }
+
+  .audio-card audio {
+    width: 80%;
   }
 </style>

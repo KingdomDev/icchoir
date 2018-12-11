@@ -2,9 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Medias from '@/components/Medias'
-import MediasAudios from '@/components/MediasAudios'
-import MediasVideos from '@/components/MediasVideos'
-import MediasDocuments from '@/components/MediasDocuments'
+import Audios from '@/components/Audios'
+import Videos from '@/components/Videos'
+import Documents from '@/components/Documents'
+
+import Document from '@/components/Document'
 
 Vue.use(Router)
 
@@ -21,19 +23,25 @@ export default new Router({
       component: Medias
     },
     {
-      path: '/medias-audios',
-      name: 'MediasAudios',
-      component: MediasAudios
+      path: '/audios',
+      name: 'Audios',
+      component: Audios
     },
     {
-      path: '/medias-videos',
-      name: 'MediasVideos',
-      component: MediasVideos
+      path: '/videos',
+      name: 'Videos',
+      component: Videos
     },
     {
-      path: '/medias-documents',
-      name: 'MediasDocuments',
-      component: MediasDocuments
+      path: '/documents',
+      name: 'Documents',
+      component: Documents
+    },
+    {
+      path: '/documents/:id',
+      name: 'Document',
+      component: Document,
+      props: {}
     }
   ]
 })

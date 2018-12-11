@@ -4,6 +4,9 @@
     <div class="container" id="medias">
       <h2>Bibliothèque - Documents</h2>
       <custom-menu-media></custom-menu-media>
+      <div class="row">
+        <p>{{document}}</p>
+      </div>
     </div>
     <custom-footer></custom-footer>
   </div>
@@ -21,7 +24,10 @@
 
     data () {
       return {
-        choirEvents: []
+        api: 'http://localhost:8080/api/documents/piece/',
+        document: 'toto',
+        errors: [],
+        documentDirectory: '/static/document/'
       }
     },
 
@@ -32,20 +38,23 @@
     },
 
     created() {
-      axios.get(`http://localhost:8080/events`).
+      axios.get(this.api + this.$route.params.id).
       then(response => {
-        this.choirEvents = response.data;
-        console.log(this.choirEvents);
+        this.document = response.data;
       }).catch (e => {
         this.errors.push(e);
       });
-    }
+    },
+
+    /*mounted() {
+      let recaptchaScript = document.createElement('script');
+      recaptchaScript.setAttribute('src', '/static/lib/pdfobject.min.js');
+      recaptchaScript.async = true;
+      document.head.appendChild(recaptchaScript);
+    },*/
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #calendar {
-  'height': 100vh
-  }
 </style>

@@ -1,81 +1,91 @@
 <template>
-  <b-navbar toggleable="md" type="dark"
-            variant="dark" fixed="top">
-    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+  <div>
+    <top-head></top-head>
 
-    <router-link class="navbar-brand" to="/">Expression Impact</router-link>
+    <div class="container col-lg-8" id="menu">
+      <b-navbar toggleable="md"
+                type="white"
+                variant="white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToCollapse" aria-controls="navbarToCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <b-collapse is-nav id="nav_collapse">
-      <b-navbar-nav>
-        <!--li class="nav-item active">
-          <router-link class="nav-link" :to="{name: 'Home'}">Accueil
-            <span class="sr-only">(current)</span>
-          </router-link>
-        </li>
+        <b-collapse is-nav id="navbarToCollapse">
+          <ul class="nav justify-content-center nav-fill">
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{name: 'Home'}">Accueil
+                <span class="sr-only">(current)</span>
+              </router-link>
+            </li>
 
-        <li class="nav-item">
-          <router-link class="nav-link" :to="{name: 'Members'}">Membres</router-link>
-        </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="#">Membres</router-link>
+            </li>
 
-        <li class="nav-item">
-          <router-link class="nav-link" :to="{name: 'Calendar'}">Calendrier</router-link>
-        </li-->
+            <li class="nav-item">
+              <router-link class="nav-link" to="#">Calendrier</router-link>
+            </li>
 
-        <li class="nav-item">
-          <router-link class="nav-link" :to="{name: 'Medias'}">Bibliothèque</router-link>
-        </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="{name: 'Documents'}">Bibliothèque</router-link>
+            </li>
 
-        <!--li class="nav-item">
-          <router-link class="nav-link" to="#">Contact</router-link>
-        </li>
-      </b-navbar-nav>
+            <li class="nav-item">
+              <router-link class="nav-link" to="#">Contact</router-link>
+            </li>
+          </ul>
 
-      <b-navbar-nav class="ml-auto">
-        <!--li class="nav-item" right>
-          <router-link class="nav-link" to="#">Inscription</router-link>
-        </li-->
+          <b-navbar-nav class="ml-auto">
+            <!--li class="nav-item" right>
+              <router-link class="nav-link" to="#">Inscription</router-link>
+            </li-->
 
-        <!--li class="nav-item" right>
-          <div>
-            <b-button @click="showModal">Connexion</b-button>
-            <b-modal id="modalPrevent"
-                     ref="modal"
-                     title="Connexion"
-                     @ok="handleOk"
-                     @shown="clearName"
-                     centered
-                     hide-footer>
-              <form @submit.stop.prevent="handleSubmit">
-                <b-form-group horizontal
-                              :label-cols="4"
-                              label="Nom d'utilisateur"
-                              label-for="input_default">
-                    <b-form-input type="text"
-                              v-model="user.username">
-                    </b-form-input>
-                </b-form-group>
+            <!--li class="nav-item" right>
+              <div>
+                <b-button @click="showModal">Connexion</b-button>
+                <b-modal id="modalPrevent"
+                         ref="modal"
+                         title="Connexion"
+                         @ok="handleOk"
+                         @shown="clearName"
+                         centered
+                         hide-footer>
+                  <form @submit.stop.prevent="handleSubmit">
+                    <b-form-group horizontal
+                                  :label-cols="4"
+                                  label="Nom d'utilisateur"
+                                  label-for="input_default">
+                        <b-form-input type="text"
+                                  v-model="user.username">
+                        </b-form-input>
+                    </b-form-group>
 
-                <b-form-group horizontal
-                              :label-cols="4"
-                              label="Mot de passe"
-                              label-for="input_default">
-                    <b-form-input type="password"
-                              v-model="user.password">
-                    </b-form-input>
-                </b-form-group>
-                <b-btn class="mt-2" variant="outline-danger" @click="hideModal">Annuler</b-btn>
-                <b-btn class="mt-2" variant="outline-info" @click="handleOk">Valider</b-btn>
-              </form>
-            </b-modal>
-          </div>
-        </li-->
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+                    <b-form-group horizontal
+                                  :label-cols="4"
+                                  label="Mot de passe"
+                                  label-for="input_default">
+                        <b-form-input type="password"
+                                  v-model="user.password">
+                        </b-form-input>
+                    </b-form-group>
+                    <b-btn class="mt-2" variant="outline-danger" @click="hideModal">Annuler</b-btn>
+                    <b-btn class="mt-2" variant="outline-info" @click="handleOk">Valider</b-btn>
+                  </form>
+                </b-modal>
+              </div>
+            </li-->
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
+  </div>
 </template>
 
 <script>
   import axios from 'axios'
+  import TopHead from "./TopHead.vue"
 
   export default {
     name: 'custom-menu',
@@ -89,6 +99,11 @@
         }
       }
     },
+
+    components: {
+      TopHead
+    },
+
     methods: {
       showModal () {
         this.$refs.modal.show()
@@ -121,4 +136,30 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  #menu {
+
+  }
+
+  .nav-link {
+    font-size: 1.5em;
+    color: #1b1e21;
+    text-decoration: none;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .nav-link:hover {
+    text-decoration: none;
+    background-color: #d1d1d1;
+  }
+
+  .nav-link:active {
+
+  }
+  .container {
+    white-space: nowrap;
+    width:100%;
+  }
 </style>

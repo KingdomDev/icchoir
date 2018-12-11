@@ -1,11 +1,11 @@
-package fr.icchoirlyon.media;
+package fr.icchoirlyon.document;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "media")
-public class Media {
+@Table(name = "document")
+public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -57,6 +57,14 @@ public class Media {
         this.url = url;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public Date getCreationDate() {
         return creationDate;
     }
@@ -67,10 +75,11 @@ public class Media {
 
     @Override
     public String toString() {
-        return "Media{" +
+        return "Document{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
+                ", description='" + description + '\'' +
                 ", url='" + url + '\'' +
                 ", creationDate=" + creationDate +
                 '}';

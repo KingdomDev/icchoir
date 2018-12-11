@@ -2,6 +2,7 @@
   <div id="app">
     <div style="text-align: center">
       <img src="./assets/images/logo.png">
+      <p>Have a cup of coffee: <font-awesome-icon icon="coffee" /></p>
     </div>
     <router-view/>
   </div>
