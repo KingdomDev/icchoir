@@ -15,13 +15,13 @@ public class MediaController {
 
     @GetMapping("/medias")
     @Timed
-    Page<Media> getAllMedias() {
+    List<MediaDTO> getAllMedias() {
         return mediaService.getAllMedias();
     }
 
     @GetMapping("/medias/{type}")
     @Timed
-    List<Media> getAllMediasByType(@PathVariable String type) {
+    List<MediaDTO> getAllMediasByType(@PathVariable String type) {
         return mediaService.getAllMediasByType(type);
     }
 }

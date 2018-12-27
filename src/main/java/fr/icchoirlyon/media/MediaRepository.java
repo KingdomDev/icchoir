@@ -14,5 +14,7 @@ public interface MediaRepository extends CrudRepository<Media, Long> {
             "ORDER BY m.creationDate DESC")
     Page<Media> findAllTop10(Pageable pageable);
 
+    List<Media> findAll();
+
     List<Media> findAllByType(String type);
 }

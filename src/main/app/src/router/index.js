@@ -15,8 +15,8 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
-    },
+      component: Audios
+    }/*,
     {
       path: '/medias',
       name: 'Medias',
@@ -42,6 +42,6 @@ export default new Router({
       name: 'Document',
       component: Document,
       props: {}
-    }
+    }*/
   ]
 })

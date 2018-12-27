@@ -18,9 +18,60 @@
               {{audio.name}}
             </div>
             <div class="card-body">
-              <audio controls="controls" :src="audioDirectory + audio.url">
-              </audio>
+              <b-carousel id="carousel_audio"
+                          style="text-shadow: 1px 1px 2px #333;"
+                          controls
+                          indicators
+                          background="#ffffff"
+                          v-model="slide"
+              >
+                <!-- All song audio clide -->
+                <b-carousel-slide caption="Chant complet">
+                  <img slot="img" class="d-block img-fluid w-100"
+                       src="../assets/images/caroussel7.jpg" alt="image slot">
+                  <audio controls="controls" :src="audioDirectory + audio.url">
+                  </audio>
+                </b-carousel-slide>
+
+                <!-- Alto slide -->
+                <b-carousel-slide caption="Alto"
+                                  v-if="audio.voiceToMedias.length">
+                  <img slot="img" class="d-block img-fluid w-100"
+                       src="../assets/images/caroussel7.jpg" alt="image slot">
+                    <audio controls="controls" :src="audio_voice_directory + audio.voiceToMedias[0]">
+                    </audio>
+                </b-carousel-slide>
+
+                <!-- Soprano slide -->
+                <b-carousel-slide caption="Soprano"
+                  v-if="audio.voiceToMedias.length">
+                  <img slot="img" class="d-block img-fluid w-100"
+                       src="../assets/images/caroussel7.jpg" alt="image slot">
+                    <audio controls="controls" :src="audio_voice_directory + audio.voiceToMedias[1]">
+                    </audio>
+                </b-carousel-slide>
+
+                <!-- Tenor slide -->
+                <b-carousel-slide caption="Tenor"
+                                  v-if="audio.voiceToMedias.length">
+                  <img slot="img" class="d-block img-fluid w-100"
+                       src="../assets/images/caroussel7.jpg" alt="image slot">
+                  <audio controls="controls" :src="audio_voice_directory + audio.voiceToMedias[2]">
+                  </audio>
+                </b-carousel-slide>
+
+              </b-carousel>
             </div>
+            <!--ul class="list-group list-group-flush"
+                v-if="audio.voiceToMedias.length">
+              <li class="list-group-item">
+                Alto :
+                <audio controls="controls" :src="audio_voice_directory + audio.voiceToMedias[0]">
+                </audio>
+              </li>
+              <li class="list-group-item">Soprano</li>
+              <li class="list-group-item">Tenor</li>
+            </ul-->
           </div>
         </div>
         <!--b-card-group columns >
@@ -54,7 +105,11 @@
       return {
         api: 'http://localhost:8080/api/medias/audio',
         audios: [],
-        audioDirectory: '/static/audio/'
+        audioDirectory: 'http://localhost/icchoir/chants/',
+        audio_voice_directory: 'http://localhost/icchoir/chants-voix/',
+
+        slide: 0,
+        sliding: null
       }
     },
 
@@ -72,6 +127,15 @@
       }).catch (e => {
         this.errors.push(e);
       });
+    },
+
+    methods: {
+      onSlideStart (slide) {
+        this.sliding = true
+      },
+      onSlideEnd (slide) {
+        this.sliding = false
+      }
     },
 
     /*computed: {

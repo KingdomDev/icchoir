@@ -14,7 +14,7 @@ public class VoiceController {
 
     @GetMapping("/voices")
     @Timed
-    public List<Voice> getAllVoices() {
+    public List<VoiceDTO> getAllVoices() {
         return voiceService.getAllVoices();
     }
 }

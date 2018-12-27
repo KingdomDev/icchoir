@@ -20,6 +20,6 @@ public class PersonService {
     }
 
     public Person findPerson(Long id) {
-        return personRepository.findOne(id);
+        return personRepository.getOne(id);
     }
 }

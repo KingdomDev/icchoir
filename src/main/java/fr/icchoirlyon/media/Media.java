@@ -5,6 +5,7 @@ import fr.icchoirlyon.voice_to_media.VoiceToMedia;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "media")
@@ -28,8 +29,8 @@ public class Media {
     @Column(name = "creation_date", nullable = false)
     private Date creationDate;
 
-    @OneToMany(mappedBy = "media", cascade = CascadeType.ALL)
-    List<VoiceToMedia> voiceToMedia;
+    @OneToMany(mappedBy = "media")
+    List<VoiceToMedia> voiceToMedias;
 
     public long getId() {
         return id;
@@ -71,8 +72,16 @@ public class Media {
         this.creationDate = creationDate;
     }
 
-    public List<VoiceToMedia> getVoiceToMedia() {
-        return voiceToMedia;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public List<VoiceToMedia> getVoiceToMedias() {
+        return voiceToMedias;
     }
 
     @Override

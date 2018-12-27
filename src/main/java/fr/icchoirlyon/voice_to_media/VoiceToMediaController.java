@@ -1,6 +1,5 @@
 package fr.icchoirlyon.voice_to_media;
 
-import com.codahale.metrics.annotation.Timed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

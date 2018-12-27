@@ -78,7 +78,7 @@
         this.sliding = true
       },
       onSlideEnd (slide) {
-        //this.sliding = false
+        this.sliding = false
       }
     }
   }

@@ -20,7 +20,7 @@ public class DocumentService {
 
     @Transactional
     Document getDocument(Long id) {
-        return documentRepository.findOne(id);
+        return documentRepository.getOne(id);
     }
 
     @Transactional

@@ -27,7 +27,6 @@ public class VoiceToMedia implements Serializable {
         return id;
     }
 
-    @JoinColumn(name = "idVoice")
     public Voice getVoice() {
         return voice;
     }
@@ -36,7 +35,6 @@ public class VoiceToMedia implements Serializable {
         this.voice = voice;
     }
 
-    @JoinColumn(name = "idMedia")
     public Media getMedia() {
         return media;
     }

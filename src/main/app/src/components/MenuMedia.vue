@@ -8,14 +8,14 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <router-link class="nav-link" to="audios">Audios <span class="sr-only">(current)</span></router-link>
+          <router-link class="nav-link" to="/">Audios <span class="sr-only">(current)</span></router-link>
+        </li>
+        <!--li class="nav-item">
+          <router-link class="nav-link" to="/">Vidéos</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="videos">Vidéos</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="documents">Documents</router-link>
-        </li>
+          <router-link class="nav-link" to="/">Documents</router-link>
+        </li-->
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" v-model="search"

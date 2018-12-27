@@ -3,12 +3,11 @@ package fr.icchoirlyon.voice;
 import fr.icchoirlyon.voice_to_media.VoiceToMedia;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "voice")
-public class Voice implements Serializable {
+public class Voice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,8 +19,8 @@ public class Voice implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "voice", cascade = CascadeType.ALL)
-    private List<VoiceToMedia> voiceToMedia;
+    @OneToMany(mappedBy = "voice")
+    private Set<VoiceToMedia> voiceToMedia;
 
     public Long getId() {
         return id;
@@ -43,7 +42,7 @@ public class Voice implements Serializable {
         this.description = description;
     }
 
-    public List<VoiceToMedia> getVoiceToMedia() {
+    public Set<VoiceToMedia> getVoiceToMedia() {
         return voiceToMedia;
     }
 }

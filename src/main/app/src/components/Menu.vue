@@ -2,7 +2,7 @@
   <div>
     <top-head></top-head>
 
-    <div class="container col-lg-8" id="menu">
+    <!--div class="container col-lg-8" id="menu">
       <b-navbar toggleable="md"
                 type="white"
                 variant="white">
@@ -76,10 +76,10 @@
                 </b-modal>
               </div>
             </li-->
-          </b-navbar-nav>
+          <!--/b-navbar-nav>
         </b-collapse>
       </b-navbar>
-    </div>
+    </div-->
   </div>
 </template>
 
